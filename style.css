@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+.dark{
+  --background-color: #242424;
+  --input-border-color: #979797;
+  --color: #FFF;
+  --shadow-color: 0px 4px 8px #ffffff26;
+  --highlight-background: #ffffff26;
+  --highlight-color: #ffffffb3;
+  --highlight-description: #FFF;
+}
+
 body {
   --background-color: #FFF;
   --input-border-color: #979797;
