@@ -15,7 +15,8 @@ function promessaResposta() {
     const resultado = fetch(urlBase + "discover/movie?language=pt-BR&include_adult=false");
 
     resultado.then( res => {
-        const promessaDados = res.json();        
+        const promessaDados = res.json();
+
         promessaDados.then( ( { results: infos } ) => {
             vetorFilmes = infos;
             
@@ -30,6 +31,7 @@ function criarFilmes() {
     vetorFilmes.slice(inicio, fim).forEach( dado => {
         const divMovie = document.createElement("div");
         divMovie.classList.add("movie");
+
         const imgUrl = dado.poster_path;
         divMovie.style.backgroundImage = `url('${imgUrl}')`;
 
@@ -53,7 +55,7 @@ function criarFilmes() {
         spanNota.insertAdjacentElement("afterbegin", imgEstrela );
         divMovieInfo.append( spanTitle, spanNota );
         divMovie.append( divMovieInfo );
-        divMoviesGallery.append( divMovie );
+        divMoviesGallery?.append( divMovie );
         
         criarModal(divMovie, dado.id);
     } );
@@ -61,28 +63,31 @@ function criarFilmes() {
 
 function criarModal(elemento, id) {
     elemento.addEventListener( 'click', () => {
-        modal.classList.remove("hidden");
-        const promessaResposta = fetch(urlBase + `movie/${id}?language=pt-BR`)
+        modal?.classList.remove("hidden");
+
+        const promessaResposta = fetch(urlBase + `movie/${id}?language=pt-BR`);
+
         promessaResposta.then( res => {
             const promessaDados = res.json();
+
             promessaDados.then( dado => {
                 const modalTitulo = document.querySelector(".modal__title");
                 modalTitulo.textContent = dado.title;
 
                 const modalImg = document.querySelector(".modal__img");
                 const modalImgUrl = dado.backdrop_path;
-                modalImg.setAttribute("src", modalImgUrl);
+                modalImg?.setAttribute("src", modalImgUrl);
 
                 const modalDescricao = document.querySelector(".modal__description");
                 modalDescricao.textContent = dado.overview;
 
                 const modalNota = document.querySelector(".modal__average");
-                modalNota.textContent = dado.vote_average;
+                modalNota.textContent = dado.vote_average.toFixed(1);
 
                 const modalGeneros = document.querySelector(".modal__genres");
                 const generos = dado.genres;                    
                 
-                while (modalGeneros.firstChild) {
+                while (modalGeneros?.firstChild) {
                     modalGeneros.removeChild(modalGeneros.firstChild);
                 };
                 
@@ -90,7 +95,7 @@ function criarModal(elemento, id) {
                     const modalGenero = document.createElement("span");
                     modalGenero.classList.add("modal__genre");
                     modalGenero.textContent = genero.name;
-                    modalGeneros.append(modalGenero);
+                    modalGeneros?.append(modalGenero);
                 }
             } );
         } );
@@ -98,16 +103,16 @@ function criarModal(elemento, id) {
 };
 
 const sairModal = event => {
-    if (event.target !== event.currentTarget && event.target !== modal.firstElementChild) {
+    if (/* event.target !== event.currentTarget &&  */event.target !== modal?.firstElementChild) {
         return;
     }
 
-    modal.classList.add("hidden");
+    modal?.classList.add("hidden");
 };
 
-modal.addEventListener("click", sairModal);
+modal?.addEventListener("click", sairModal);
 
-botaoPosterior.addEventListener( 'click', () => {    
+botaoPosterior?.addEventListener( 'click', () => {    
     inicio += 5;
     fim += 5;
 
@@ -120,7 +125,7 @@ botaoPosterior.addEventListener( 'click', () => {
     criarFilmes();
 });
 
-botaoAnterior.addEventListener( 'click', () => {
+botaoAnterior?.addEventListener( 'click', () => {
     inicio -= 5;
     fim -= 5;
     
@@ -136,6 +141,7 @@ botaoAnterior.addEventListener( 'click', () => {
 const promessaFilmeDoDia = fetch(urlBase + "movie/436969?language=pt-BR");
 promessaFilmeDoDia.then( res => {
     const promessaDados = res.json();
+
     promessaDados.then( dado => {
         const filmeDoDiaVideo = document.querySelector(".highlight__video");
         const imgUrl = dado.backdrop_path;
@@ -145,7 +151,7 @@ promessaFilmeDoDia.then( res => {
         filmeDoDiaTitulo.textContent = dado.title;
 
         const filmeDoDiaNota = document.querySelector(".highlight__rating");
-        filmeDoDiaNota.textContent = dado.vote_average;
+        filmeDoDiaNota.textContent = dado.vote_average.toFixed(1);
         
         const filmeDoDiaGeneros = document.querySelector(".highlight__genres");
         const vetorGeneros = [];
@@ -167,14 +173,15 @@ promessaFilmeDoDia.then( res => {
 const promessaFilmeDoDiaVideo = fetch(urlBase + "movie/436969/videos?language=pt-BR");
 promessaFilmeDoDiaVideo.then( res => {
     const promessaDados = res.json();
+
     promessaDados.then( dado => {
         const filmeDoDiaLink = document.querySelector(".highlight__video-link");
         const hrefVideo = `https://www.youtube.com/watch?v=${dado.results[0].key}`;
-        filmeDoDiaLink.setAttribute("href", hrefVideo);
+        filmeDoDiaLink?.setAttribute("href", hrefVideo);
     } );
 } );
 
-inputBusca.addEventListener( "keydown", event => {
+inputBusca?.addEventListener( "keydown", event => {
     inicio = 0;
     fim = 5;
     
@@ -191,8 +198,6 @@ inputBusca.addEventListener( "keydown", event => {
         return;
     }
     
-    /* divMoviesGallery.innerHTML = ""; */
-
     fetch(`https://tmdb-proxy.cubos-academy.workers.dev/3/search/movie?language=pt-BR&include_adult=false&query=${inputBusca.value}`).then( res => {
         if (!res.ok) {
             inputBusca.value = "";
@@ -215,19 +220,18 @@ inputBusca.addEventListener( "keydown", event => {
     });
 });
 
-botaoTema.addEventListener( 'click', () => {
+botaoTema?.addEventListener( 'click', () => {
     const body = document.querySelector('body');
 
-    if (body.classList.contains("dark")) {
+    if (body?.classList.contains("dark")) {
         body.classList.remove("dark");
-        botaoTema.src = "./assets/light-mode.svg";
+        botaoTema.src = "./assets/dark-mode.svg";
         botaoAnterior.src = "./assets/seta-esquerda-preta.svg";
         botaoPosterior.src = "./assets/seta-direita-preta.svg";
     } else {
-        body.classList.add("dark");
-        botaoTema.src = "./assets/dark-mode.svg";
+        body?.classList.add("dark");
+        botaoTema.src = "./assets/light-mode.svg";
         botaoAnterior.src = "./assets/seta-esquerda-branca.svg";
         botaoPosterior.src = "./assets/seta-direita-branca.svg";
     }
 });
-
