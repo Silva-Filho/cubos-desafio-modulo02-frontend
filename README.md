@@ -382,26 +382,9 @@ Informações do retorno da API necessárias para o preenchimento:
 
 O modal poderá ser "fechado" por meio de um clique nele próprio ou na `<img class="modal__close">`, ao clicar em qualquer um dos dois, a classe "hidden" deverá ser adicionada a `<div class="modal">`
 
-### Mudança de tema **NÃO OBRIGATÓRIO**
+### Mudança de tema **NÃO É ITEM OBRIGATÓRIO**
 
 Ao clicar na `<img class="btn-theme">`, caso o **tema atual** seja "light" ou "claro", o mesmo deverá ser trocado para o tema "dark" ou "escuro", após isso, você deverá modificar o tema (imagens e cores) do seu website de acordo com o Figma. Essa troca de tema, poderá ser facilitada caso seja feita por meio da troca de variáveis CSS.
-
-## Aulas úteis:
-
--   [Selecionando elementos mais facilmente](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/06/01/2022/aula/dcf79bd9-3872-43ed-b4e9-8488cbb9b4ae/1427ba35-c47d-4292-965e-62424ea1ec60)
--   [Modificando as propriedades dos elementos](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/06/01/2022/aula/dcf79bd9-3872-43ed-b4e9-8488cbb9b4ae/61861a59-a16a-4099-ba2d-eb1559032382)
--   [Manipulando classes com a DOM](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/06/01/2022/aula/dcf79bd9-3872-43ed-b4e9-8488cbb9b4ae/7cf34531-5a18-4e1d-8105-13ea74c28e1e)
--   [Evento de clique](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/06/01/2022/aula/dcf79bd9-3872-43ed-b4e9-8488cbb9b4ae/07fed18a-2068-468a-83fe-9bf84673dbf5)
--   [Evento de Tecla e objeto de eventos](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/11/01/2022/aula/62543c16-2009-48b8-afbf-177816a3983d/850f8dc8-c3c7-4ab9-8785-254e7f0ea038)
--   [Target e multiplos eventos](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/11/01/2022/aula/62543c16-2009-48b8-afbf-177816a3983d/5cb2d4cd-3818-46a3-90ac-02e82a4e4e85)
--   [Resumo position fixed](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/13/01/2022/aula/7728a384-e8de-47d1-bb36-17b649929e45/c9c5539f-7d5a-471f-8da6-156dfbe40ea5)
--   [Criando um modal](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/13/01/2022/aula/7728a384-e8de-47d1-bb36-17b649929e45/82ecad86-e014-467f-a855-16567607dbf4)
--   [Fetch e assincronismo](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/25/01/2022/aula/590ceddc-0cfa-4d67-9435-b6d724080c86/5c1e8d1b-e6bd-4d43-849e-11b47c1ddc88)
--   [Populando a página com informações externas](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/27/01/2022/aula/bd37b412-5904-4a95-8e73-29da894e09da/da42bf0d-bc6d-4159-b880-902e430faa5e)
--   [Criando e adicionando elementos](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/27/01/2022/aula/bd37b412-5904-4a95-8e73-29da894e09da/098d8118-35e0-43b0-9bb3-fc0a6b376e1b)
--   [Variaveis CSS](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/01/02/2022/aula/86d6b72e-9846-405b-9d1a-9ba61be33e3e/6267a54e-5410-410a-80aa-1d65b01484e0)
--   [Modificando as variaveis CSS pelo DOM](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/01/02/2022/aula/86d6b72e-9846-405b-9d1a-9ba61be33e3e/c84dbae3-f2fd-428d-bc05-da55a8edad05)
--   [LocalStorage](https://plataforma.cubos.academy/curso/6e938100-e6dd-4b5d-a018-61a62ba2429b/data/01/02/2022/aula/86d6b72e-9846-405b-9d1a-9ba61be33e3e/fc81a87c-65d7-4e17-8b28-d0a67139cd90)
 
 **LEMBRE-SE**: é melhor feito do que perfeito!!!
 
